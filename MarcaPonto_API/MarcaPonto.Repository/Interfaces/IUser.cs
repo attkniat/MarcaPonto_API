@@ -6,11 +6,11 @@ namespace MarcaPonto.Repository.Interfaces
 {
     public  interface IUser
     {
-        Task<bool> CreateUser(Customer customer);
-        Task<Customer> GetCustomerById(string customerIdGuild);
-        Task<Customer> GetCustomerByCPF(string customerCPF);
-        Task<List<Customer>> GetAllCustomers();
-        Task<Customer> UpdateUser(Customer customer);
-        Task<bool> DeleteUser(string customerIdGuild, string CPF);
+        Task<bool> CreateUserAsync(Customer customer);
+        Customer GetCustomerById(string customerIdGuild);
+        Customer GetCustomerByCPF(string customerCPF);
+        List<Customer> GetAllCustomers();
+        Task<bool> UpdateUser(Customer customer);
+        Task<bool> DeleteUser(string customerIdGuild);
     }
 }

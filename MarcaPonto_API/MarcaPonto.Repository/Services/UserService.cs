@@ -1,43 +1,87 @@
-﻿using MarcaPonto.Model.Usuários;
+﻿using MarcaPonto.DataBase;
+using MarcaPonto.Model.Usuários;
 using MarcaPonto.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MarcaPonto.Repository.Services
 {
-    internal class UserService : IUser
+    public class UserService : IUser
     {
-        public Task<bool> CreateUser(Customer customer)
+        public async Task<bool> CreateUserAsync(Customer customer)
         {
-            throw new NotImplementedException();
+            using (var db = new AppDBContext())
+            {
+                try
+                {
+                    await db.Customers.AddAsync(customer);
+                    return await db.SaveChangesAsync() >= 1;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Was not possible to Create a new Customer ---> {ex.Message}");
+                }
+            }
         }
 
-        public Task<bool> DeleteUser(string customerIdGuild, string CPF)
+        public List<Customer> GetAllCustomers()
         {
-            throw new NotImplementedException();
+            using (var db = new AppDBContext())
+            {
+                return db.Customers.ToList();
+            }
         }
 
-        public Task<List<Customer>> GetAllCustomers()
+        public Customer GetCustomerByCPF(string customerCPF)
         {
-            throw new NotImplementedException();
+            using (var db = new AppDBContext())
+            {
+                return db.Customers.FirstOrDefault(c => c.CPF == customerCPF);
+            }
         }
 
-        public Task<Customer> GetCustomerByCPF(string customerCPF)
+        public Customer GetCustomerById(string customerIdGuild)
         {
-            throw new NotImplementedException();
+            using (var db = new AppDBContext())
+            {
+                return db.Customers.FirstOrDefault(c => c.Id == customerIdGuild);
+            }
         }
 
-        public Task<Customer> GetCustomerById(string customerIdGuild)
+        public async Task<bool> UpdateUser(Customer customer)
         {
-            throw new NotImplementedException();
+            using (var db = new AppDBContext())
+            {
+                try
+                {
+                    db.Customers.Update(customer);
+                    return await db.SaveChangesAsync() >= 1;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Was not possible to update the customer id {customer.Name} ---> {ex.Message}");
+                }
+            }
         }
 
-        public Task<Customer> UpdateUser(Customer customer)
+        public async Task<bool> DeleteUser(string customerIdGuild)
         {
-            throw new NotImplementedException();
+            using (var db = new AppDBContext())
+            {
+                try
+                {
+                    var contact = GetCustomerById(customerIdGuild);
+                    db.Remove(contact);
+
+                    return await db.SaveChangesAsync() >= 1;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Was Not possible to delete the customer Id {customerIdGuild} ---> {ex.Message}");
+                }
+            }
         }
     }
 }
