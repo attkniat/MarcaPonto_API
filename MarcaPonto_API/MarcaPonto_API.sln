@@ -5,6 +5,18 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto_API", "MarcaPonto_API\MarcaPonto_API.csproj", "{2ED2D900-3D7C-4B48-B2A0-AE0D05F35716}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.Model", "MarcaPonto.Model\MarcaPonto.Model.csproj", "{A816AE90-3FF0-45DD-8079-59D781B0D444}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.Repository", "MarcaPonto.Repository\MarcaPonto.Repository.csproj", "{63050D12-34CB-4187-AB0A-9E8CCA7F0160}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.DataBase", "MarcaPonto.DataBase\MarcaPonto.DataBase.csproj", "{9B01157C-265C-4C05-9CF1-8CFD193814D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.Enum", "MarcaPonto.Enum\MarcaPonto.Enum.csproj", "{5BF136C9-6663-49BA-A1A2-184ED70C523E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.BI", "MarcaPonto.BI\MarcaPonto.BI.csproj", "{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.Auth", "MarcaPonto.Auth\MarcaPonto.Auth.csproj", "{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{2ED2D900-3D7C-4B48-B2A0-AE0D05F35716}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ED2D900-3D7C-4B48-B2A0-AE0D05F35716}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ED2D900-3D7C-4B48-B2A0-AE0D05F35716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A816AE90-3FF0-45DD-8079-59D781B0D444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A816AE90-3FF0-45DD-8079-59D781B0D444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A816AE90-3FF0-45DD-8079-59D781B0D444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A816AE90-3FF0-45DD-8079-59D781B0D444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63050D12-34CB-4187-AB0A-9E8CCA7F0160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63050D12-34CB-4187-AB0A-9E8CCA7F0160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63050D12-34CB-4187-AB0A-9E8CCA7F0160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63050D12-34CB-4187-AB0A-9E8CCA7F0160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B01157C-265C-4C05-9CF1-8CFD193814D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B01157C-265C-4C05-9CF1-8CFD193814D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B01157C-265C-4C05-9CF1-8CFD193814D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B01157C-265C-4C05-9CF1-8CFD193814D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF136C9-6663-49BA-A1A2-184ED70C523E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF136C9-6663-49BA-A1A2-184ED70C523E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF136C9-6663-49BA-A1A2-184ED70C523E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF136C9-6663-49BA-A1A2-184ED70C523E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
