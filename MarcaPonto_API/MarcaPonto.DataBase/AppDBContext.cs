@@ -1,8 +1,6 @@
 ﻿using MarcaPonto.Model.Usuários;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.IO;
-using System.Reflection;
 using MarcaPonto.Enum;
 
 namespace MarcaPonto.DataBase
@@ -10,13 +8,19 @@ namespace MarcaPonto.DataBase
     public class AppDBContext : DbContext
     {
         public DbSet<Customer> Customers { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
+
+#if DEBUG
+            dbContextOptionsBuilder.UseSqlite($"Data Source=./Db/AppDB.db");
+#else
             var dirPath = Assembly.GetExecutingAssembly().Location;
             dirPath = Path.GetDirectoryName(dirPath);
-            var fullPath = Path.GetFullPath(Path.Combine(dirPath, "MarcaPonto.DataBase/AppDB.db"));
+            var fullPath = Path.GetFullPath(Path.Combine(dirPath, "Db/AppDB.db"));
 
             dbContextOptionsBuilder.UseSqlite($"Data Source={fullPath}");
+#endif
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

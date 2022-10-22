@@ -50,7 +50,7 @@ namespace MarcaPonto.DataBase.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1844ffd1-e384-4622-8213-95eae3b152f9",
+                            Id = "6aaa5bc9-135d-4ebb-9cd5-366bd4480c66",
                             CPF = "1234567890",
                             Email = "Customer1@email.com",
                             Name = "Customer 01",
@@ -59,7 +59,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "7b9d4c8b-8a18-4116-a7f5-b6a451d7a07e",
+                            Id = "811097d6-06b3-4e86-a7f5-019972384ac1",
                             CPF = "2234567890",
                             Email = "Customer2@email.com",
                             Name = "Customer 02",
@@ -68,7 +68,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "bc50b967-8d2d-4d32-a8a3-dc2507aef3ea",
+                            Id = "aa25f3c1-fbab-49ee-8138-8c8c4d99fa57",
                             CPF = "3234567890",
                             Email = "Customer3@email.com",
                             Name = "Customer 03",
@@ -77,7 +77,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "44e50611-e715-4770-83bc-314ec5527716",
+                            Id = "c798f23f-8b32-4382-8cf0-558f0cd9aa93",
                             CPF = "4234567890",
                             Email = "Customer4@email.com",
                             Name = "Customer 04",
@@ -86,7 +86,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "7e48a3e6-27be-4f53-a92d-e3170a716541",
+                            Id = "c4b77872-0989-4580-9aea-67247db10031",
                             CPF = "5234567890",
                             Email = "Customer5@email.com",
                             Name = "Customer 05",

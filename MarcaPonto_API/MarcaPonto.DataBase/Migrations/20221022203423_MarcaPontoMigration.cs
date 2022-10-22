@@ -25,27 +25,27 @@ namespace MarcaPonto.DataBase.Migrations
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "1844ffd1-e384-4622-8213-95eae3b152f9", "1234567890", "Customer1@email.com", "Customer 01", "customer01", "Customer" });
+                values: new object[] { "6aaa5bc9-135d-4ebb-9cd5-366bd4480c66", "1234567890", "Customer1@email.com", "Customer 01", "customer01", "Customer" });
 
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "7b9d4c8b-8a18-4116-a7f5-b6a451d7a07e", "2234567890", "Customer2@email.com", "Customer 02", "customer02", "Customer" });
+                values: new object[] { "811097d6-06b3-4e86-a7f5-019972384ac1", "2234567890", "Customer2@email.com", "Customer 02", "customer02", "Customer" });
 
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "bc50b967-8d2d-4d32-a8a3-dc2507aef3ea", "3234567890", "Customer3@email.com", "Customer 03", "customer03", "Customer" });
+                values: new object[] { "aa25f3c1-fbab-49ee-8138-8c8c4d99fa57", "3234567890", "Customer3@email.com", "Customer 03", "customer03", "Customer" });
 
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "44e50611-e715-4770-83bc-314ec5527716", "4234567890", "Customer4@email.com", "Customer 04", "customer04", "Customer" });
+                values: new object[] { "c798f23f-8b32-4382-8cf0-558f0cd9aa93", "4234567890", "Customer4@email.com", "Customer 04", "customer04", "Customer" });
 
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "7e48a3e6-27be-4f53-a92d-e3170a716541", "5234567890", "Customer5@email.com", "Customer 05", "customer05", "Customer" });
+                values: new object[] { "c4b77872-0989-4580-9aea-67247db10031", "5234567890", "Customer5@email.com", "Customer 05", "customer05", "Customer" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

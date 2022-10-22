@@ -17,4 +17,8 @@
     <ProjectReference Include="..\MarcaPonto.Model\MarcaPonto.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Db\" />
+  </ItemGroup>
+
 </Project>
