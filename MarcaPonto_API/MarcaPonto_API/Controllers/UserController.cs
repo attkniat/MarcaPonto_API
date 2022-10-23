@@ -28,8 +28,7 @@ namespace MarcaPonto_API.Controllers
 
         [HttpPost]
         [Route("create-customer")]
-        //[Authorize(Roles = "Administrador")]
-        [AllowAnonymous]
+        [Authorize(Roles = "Administrador")]
         public void CreateUser(UserCreateViewModel user)
         {
             try
@@ -45,7 +44,6 @@ namespace MarcaPonto_API.Controllers
         [HttpPost]
         [Route("create-admin")]
         [Authorize(Roles = "Administrador")]
-        //[AllowAnonymous]
         public void CreateAdmin(UserCreateViewModel user)
         {
             try
