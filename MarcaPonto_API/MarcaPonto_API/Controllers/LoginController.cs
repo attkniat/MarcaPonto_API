@@ -4,7 +4,6 @@ using MarcaPonto.Model.Usuários;
 using MarcaPonto.Repository.Interfaces;
 using MarcaPonto.Enum;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 
 namespace MarcaPonto_API.Controllers
@@ -35,6 +34,33 @@ namespace MarcaPonto_API.Controllers
                 Email = userFromDb.Email,
                 Password = userFromDb.Password,
                 Role = nameof(UsersEnum.Customer)
+            };
+
+            var token = await _token.GenerateToken(userAuth);
+
+            customer.Password = string.Empty;
+
+            return new
+            {
+                user = customer,
+                token = token
+            };
+        }
+
+        [HttpPost]
+        [Route("admin-login")]
+        public async Task<ActionResult<dynamic>> AdminAuthenticate([FromBody] UserViewModel customer)
+        {
+            var userFromDb = _user.GetCustomerByEmailPassword(customer.Email, customer.Password);
+
+            if (userFromDb == null)
+                return NotFound(new { message = "User not Found" });
+
+            var userAuth = new UserAuthModel()
+            {
+                Email = userFromDb.Email,
+                Password = userFromDb.Password,
+                Role = nameof(UsersEnum.Administrador)
             };
 
             var token = await _token.GenerateToken(userAuth);

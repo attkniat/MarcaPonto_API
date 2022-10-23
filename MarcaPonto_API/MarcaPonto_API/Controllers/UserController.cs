@@ -1,4 +1,5 @@
-﻿using MarcaPonto.Model.Usuários;
+﻿using MarcaPonto.Enum;
+using MarcaPonto.Model.Usuários;
 using MarcaPonto.Repository.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -27,16 +28,32 @@ namespace MarcaPonto_API.Controllers
 
         [HttpPost]
         [Route("create-customer")]
-        [Authorize(Roles = "Customer,Administrador")]
+        [Authorize(Roles = "Administrador")]
         public void CreateUser(User customer)
         {
             try
             {
-                _userResitory.CreateUserAsync(customer);
+                _userResitory.CreateUserAsync(customer, UsersEnum.Customer);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Was not possible to invoke the Customer Services ---> {ex.Message}");
+                throw new Exception($"Was not possible to invoke the Create Customer Services ---> {ex.Message}");
+            }
+        }
+
+        [HttpPost]
+        [Route("create-admin")]
+        //[Authorize(Roles = "Administrador")]
+        [AllowAnonymous]
+        public void CreateAdmin(User customer)
+        {
+            try
+            {
+                _userResitory.CreateUserAsync(customer, UsersEnum.Administrador);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Was not possible to invoke the Create Admin Services ---> {ex.Message}");
             }
         }
 

@@ -11,21 +11,21 @@ namespace MarcaPonto.Repository.Services
 {
     public class UserService : IUser
     {
-        public async Task<bool> CreateUserAsync(User customer)
+        public async Task<bool> CreateUserAsync(User customer, UsersEnum role)
         {
             using (var db = new AppDBContext())
             {
                 try
                 {
                     customer.Id = Guid.NewGuid().ToString();
-                    customer.Role = nameof(UsersEnum.Customer).ToString();
+                    customer.Role = role.ToString();
 
                     await db.Customer.AddAsync(customer);
                     return await db.SaveChangesAsync() >= 1;
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception($"Was not possible to Create a new Customer ---> {ex.Message}");
+                    throw new Exception($"Was not possible to Create a new {role} ---> {ex.Message}");
                 }
             }
         }
