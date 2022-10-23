@@ -1,16 +1,17 @@
 ﻿using MarcaPonto.Auth.Interfaces;
-using MarcaPonto.Model.Usuários;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using MarcaPonto.Model.Users;
+using System.Threading.Tasks;
 
 namespace MarcaPonto.Auth.Services
 {
     public class TokenService : IToken
     {
-        public string GenerateToken(UserViewModel user)
+        public async Task<string> GenerateToken(UserAuthModel user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Settings.Secret);

@@ -38,13 +38,11 @@ namespace MarcaPonto.Repository.Services
             }
         }
 
-        public User GetCustomerByEmailPasswordRole(string customerEmail, string password, string Role)
+        public User GetCustomerByEmailPassword(string customerEmail, string password)
         {
             using (var db = new AppDBContext())
             {
-                return db.Customer.FirstOrDefault(c => c.Email == customerEmail 
-                                                 && c.Password == password
-                                                 && c.Role == Role);
+                return db.Customer.FirstOrDefault(c => c.Email == customerEmail  && c.Password == password);
             }
         }
 

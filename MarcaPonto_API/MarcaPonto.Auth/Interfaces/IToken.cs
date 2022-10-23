@@ -1,9 +1,10 @@
-﻿using MarcaPonto.Model.Usuários;
+﻿using MarcaPonto.Model.Users;
+using System.Threading.Tasks;
 
 namespace MarcaPonto.Auth.Interfaces
 {
     public interface IToken
     {
-        string GenerateToken(UserViewModel customer);
+        Task<string> GenerateToken(UserAuthModel customer);
     }
 }
