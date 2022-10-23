@@ -2,25 +2,22 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using MarcaPonto.Enum;
+using System.Reflection;
+using System.IO;
 
 namespace MarcaPonto.DataBase
 {
     public class AppDBContext : DbContext
     {
-        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Customer> Customer { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
-
-#if DEBUG
-            dbContextOptionsBuilder.UseSqlite($"Data Source=./Db/AppDB.db");
-#else
             var dirPath = Assembly.GetExecutingAssembly().Location;
             dirPath = Path.GetDirectoryName(dirPath);
             var fullPath = Path.GetFullPath(Path.Combine(dirPath, "Db/AppDB.db"));
 
             dbContextOptionsBuilder.UseSqlite($"Data Source={fullPath}");
-#endif
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

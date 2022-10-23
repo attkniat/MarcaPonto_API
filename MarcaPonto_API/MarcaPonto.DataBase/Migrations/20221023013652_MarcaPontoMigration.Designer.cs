@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MarcaPonto.DataBase.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20221022203423_MarcaPontoMigration")]
+    [Migration("20221023013652_MarcaPontoMigration")]
     partial class MarcaPontoMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,12 +47,12 @@ namespace MarcaPonto.DataBase.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customer");
 
                     b.HasData(
                         new
                         {
-                            Id = "6aaa5bc9-135d-4ebb-9cd5-366bd4480c66",
+                            Id = "88b49a5f-048b-4af7-9ae4-578aceccc19d",
                             CPF = "1234567890",
                             Email = "Customer1@email.com",
                             Name = "Customer 01",
@@ -61,7 +61,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "811097d6-06b3-4e86-a7f5-019972384ac1",
+                            Id = "81821e02-f617-4bce-a8ff-5e85997c1cf1",
                             CPF = "2234567890",
                             Email = "Customer2@email.com",
                             Name = "Customer 02",
@@ -70,7 +70,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "aa25f3c1-fbab-49ee-8138-8c8c4d99fa57",
+                            Id = "58f534bf-f7a7-431f-afea-a045a76bae75",
                             CPF = "3234567890",
                             Email = "Customer3@email.com",
                             Name = "Customer 03",
@@ -79,7 +79,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "c798f23f-8b32-4382-8cf0-558f0cd9aa93",
+                            Id = "c5785ed0-cf69-4c68-a6f5-ea97e86ca6a7",
                             CPF = "4234567890",
                             Email = "Customer4@email.com",
                             Name = "Customer 04",
@@ -88,7 +88,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "c4b77872-0989-4580-9aea-67247db10031",
+                            Id = "87c83265-4d01-43de-8d42-d536145b8dbe",
                             CPF = "5234567890",
                             Email = "Customer5@email.com",
                             Name = "Customer 05",

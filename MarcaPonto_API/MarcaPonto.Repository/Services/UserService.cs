@@ -16,7 +16,7 @@ namespace MarcaPonto.Repository.Services
             {
                 try
                 {
-                    await db.Customers.AddAsync(customer);
+                    await db.Customer.AddAsync(customer);
                     return await db.SaveChangesAsync() >= 1;
                 }
                 catch (Exception ex)
@@ -30,7 +30,7 @@ namespace MarcaPonto.Repository.Services
         {
             using (var db = new AppDBContext())
             {
-                return db.Customers.ToList();
+                return db.Customer.ToList();
             }
         }
 
@@ -38,7 +38,7 @@ namespace MarcaPonto.Repository.Services
         {
             using (var db = new AppDBContext())
             {
-                return db.Customers.FirstOrDefault(c => c.CPF == customerCPF);
+                return db.Customer.FirstOrDefault(c => c.CPF == customerCPF);
             }
         }
 
@@ -46,7 +46,7 @@ namespace MarcaPonto.Repository.Services
         {
             using (var db = new AppDBContext())
             {
-                return db.Customers.FirstOrDefault(c => c.Id == customerIdGuild);
+                return db.Customer.FirstOrDefault(c => c.Id == customerIdGuild);
             }
         }
 
@@ -56,7 +56,7 @@ namespace MarcaPonto.Repository.Services
             {
                 try
                 {
-                    db.Customers.Update(customer);
+                    db.Customer.Update(customer);
                     return await db.SaveChangesAsync() >= 1;
                 }
                 catch (Exception ex)

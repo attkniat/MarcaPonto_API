@@ -7,7 +7,7 @@ namespace MarcaPonto.DataBase.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Customers",
+                name: "Customer",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
@@ -19,39 +19,39 @@ namespace MarcaPonto.DataBase.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
+                    table.PrimaryKey("PK_Customer", x => x.Id);
                 });
 
             migrationBuilder.InsertData(
-                table: "Customers",
+                table: "Customer",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "6aaa5bc9-135d-4ebb-9cd5-366bd4480c66", "1234567890", "Customer1@email.com", "Customer 01", "customer01", "Customer" });
+                values: new object[] { "88b49a5f-048b-4af7-9ae4-578aceccc19d", "1234567890", "Customer1@email.com", "Customer 01", "customer01", "Customer" });
 
             migrationBuilder.InsertData(
-                table: "Customers",
+                table: "Customer",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "811097d6-06b3-4e86-a7f5-019972384ac1", "2234567890", "Customer2@email.com", "Customer 02", "customer02", "Customer" });
+                values: new object[] { "81821e02-f617-4bce-a8ff-5e85997c1cf1", "2234567890", "Customer2@email.com", "Customer 02", "customer02", "Customer" });
 
             migrationBuilder.InsertData(
-                table: "Customers",
+                table: "Customer",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "aa25f3c1-fbab-49ee-8138-8c8c4d99fa57", "3234567890", "Customer3@email.com", "Customer 03", "customer03", "Customer" });
+                values: new object[] { "58f534bf-f7a7-431f-afea-a045a76bae75", "3234567890", "Customer3@email.com", "Customer 03", "customer03", "Customer" });
 
             migrationBuilder.InsertData(
-                table: "Customers",
+                table: "Customer",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "c798f23f-8b32-4382-8cf0-558f0cd9aa93", "4234567890", "Customer4@email.com", "Customer 04", "customer04", "Customer" });
+                values: new object[] { "c5785ed0-cf69-4c68-a6f5-ea97e86ca6a7", "4234567890", "Customer4@email.com", "Customer 04", "customer04", "Customer" });
 
             migrationBuilder.InsertData(
-                table: "Customers",
+                table: "Customer",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "c4b77872-0989-4580-9aea-67247db10031", "5234567890", "Customer5@email.com", "Customer 05", "customer05", "Customer" });
+                values: new object[] { "87c83265-4d01-43de-8d42-d536145b8dbe", "5234567890", "Customer5@email.com", "Customer 05", "customer05", "Customer" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "Customer");
         }
     }
 }
