@@ -8,7 +8,7 @@ namespace MarcaPonto.Repository.Interfaces
     {
         Task<bool> CreateUserAsync(Customer customer);
         Customer GetCustomerById(string customerIdGuild);
-        Customer GetCustomerByEmailPassword(string customerCPF);
+        Customer GetCustomerByEmailPassword(string customerEmail, string password);
         List<Customer> GetAllCustomers();
         Task<bool> UpdateUser(Customer customer);
         Task<bool> DeleteUser(string customerIdGuild);
