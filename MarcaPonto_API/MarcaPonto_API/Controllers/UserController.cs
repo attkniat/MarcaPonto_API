@@ -66,7 +66,7 @@ namespace MarcaPonto_API.Controllers
         {
             try
             {
-                return _userResitory.GetCustomerByCPF(customerCPF);
+                return _userResitory.GetCustomerByEmailPassword(customerCPF);
             }
             catch (Exception ex)
             {
