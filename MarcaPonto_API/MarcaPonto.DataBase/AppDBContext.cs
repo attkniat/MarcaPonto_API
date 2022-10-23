@@ -9,7 +9,7 @@ namespace MarcaPonto.DataBase
 {
     public class AppDBContext : DbContext
     {
-        public DbSet<Customer> Customer { get; set; }
+        public DbSet<User> Customer { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
@@ -23,11 +23,11 @@ namespace MarcaPonto.DataBase
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var customers = new Customer[3];
+            var customers = new User[3];
 
             for (int i = 1; i <= 3; i++)
             {
-                customers[i - 1] = new Customer
+                customers[i - 1] = new User
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = $"Customer 0{i}",
@@ -37,7 +37,7 @@ namespace MarcaPonto.DataBase
                     Role = nameof(UsersEnum.Customer).ToString()
                 };
             }
-            modelBuilder.Entity<Customer>().HasData(customers);
+            modelBuilder.Entity<User>().HasData(customers);
         }
     }
 }

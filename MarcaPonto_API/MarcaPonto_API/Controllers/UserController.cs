@@ -9,7 +9,7 @@ namespace MarcaPonto_API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserController : ControllerBase
+    public class UserController : Controller
     {
         public readonly IUser _userResitory;
 
@@ -20,7 +20,7 @@ namespace MarcaPonto_API.Controllers
 
         [HttpPost]
         [Route("create-customer")]
-        public void CreateUser(Customer customer)
+        public void CreateUser(User customer)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace MarcaPonto_API.Controllers
 
         [HttpGet]
         [Route("get-all-customers")]
-        public List<Customer> GetAllCustomers()
+        public List<User> GetAllCustomers()
         {
             try
             {
@@ -48,7 +48,7 @@ namespace MarcaPonto_API.Controllers
 
         [HttpGet]
         [Route("get-customer-by-id")]
-        public Customer GetCustomerById (string customerId)
+        public User GetCustomerById (string customerId)
         {
             try
             {
@@ -60,23 +60,9 @@ namespace MarcaPonto_API.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("get-customer-by-cpf")]
-        public Customer GetCustomerByCPF(string customerEmail, string customerPassword)
-        {
-            try
-            {
-                return _userResitory.GetCustomerByEmailPassword(customerEmail, customerPassword);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Was not possible to Get the Customer by CPF ---> {ex.Message}");
-            }
-        }
-
         [HttpPut]
         [Route("update-customer")]
-        public async Task<bool> UpdateUserAsync(Customer customer)
+        public async Task<bool> UpdateUserAsync(User customer)
         {
             try
             {

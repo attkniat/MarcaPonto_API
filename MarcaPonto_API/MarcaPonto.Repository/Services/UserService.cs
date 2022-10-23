@@ -11,7 +11,7 @@ namespace MarcaPonto.Repository.Services
 {
     public class UserService : IUser
     {
-        public async Task<bool> CreateUserAsync(Customer customer)
+        public async Task<bool> CreateUserAsync(User customer)
         {
             using (var db = new AppDBContext())
             {
@@ -30,7 +30,7 @@ namespace MarcaPonto.Repository.Services
             }
         }
 
-        public List<Customer> GetAllCustomers()
+        public List<User> GetAllCustomers()
         {
             using (var db = new AppDBContext())
             {
@@ -38,15 +38,17 @@ namespace MarcaPonto.Repository.Services
             }
         }
 
-        public Customer GetCustomerByEmailPassword(string customerEmail, string password)
+        public User GetCustomerByEmailPasswordRole(string customerEmail, string password, string Role)
         {
             using (var db = new AppDBContext())
             {
-                return db.Customer.FirstOrDefault(c => c.Email == customerEmail && c.Password == password);
+                return db.Customer.FirstOrDefault(c => c.Email == customerEmail 
+                                                 && c.Password == password
+                                                 && c.Role == Role);
             }
         }
 
-        public Customer GetCustomerById(string customerIdGuild)
+        public User GetCustomerById(string customerIdGuild)
         {
             using (var db = new AppDBContext())
             {
@@ -54,7 +56,7 @@ namespace MarcaPonto.Repository.Services
             }
         }
 
-        public async Task<bool> UpdateUser(Customer customer)
+        public async Task<bool> UpdateUser(User customer)
         {
             using (var db = new AppDBContext())
             {

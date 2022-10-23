@@ -61,7 +61,6 @@ namespace MarcaPonto_API
 
             #endregion
 
-
             #region DI Config
 
             services.AddTransient<IToken, TokenService>();

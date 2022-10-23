@@ -2,7 +2,7 @@
 
 namespace MarcaPonto.Model.Usuários
 {
-    public class Customer
+    public class User
     {
         [Key]
         public string Id { get; set; }

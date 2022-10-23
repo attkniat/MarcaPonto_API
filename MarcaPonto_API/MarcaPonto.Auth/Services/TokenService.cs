@@ -10,7 +10,7 @@ namespace MarcaPonto.Auth.Services
 {
     public class TokenService : IToken
     {
-        public string GenerateToken(Customer customer)
+        public string GenerateToken(UserViewModel user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
@@ -19,8 +19,8 @@ namespace MarcaPonto.Auth.Services
             {
                 Subject = new ClaimsIdentity(new[]
                {
-                   new Claim(ClaimTypes.Email, customer.Email),
-                   new Claim(ClaimTypes.Role, customer.Role),
+                   new Claim(ClaimTypes.Email, user.Email),
+                   new Claim(ClaimTypes.Role, user.Role),
                }),
 
                 Expires = DateTime.UtcNow.AddHours(8),
