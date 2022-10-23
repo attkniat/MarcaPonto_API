@@ -16,6 +16,7 @@ namespace MarcaPonto.Repository.Services
             {
                 try
                 {
+                    customer.Id = Guid.NewGuid().ToString();
                     await db.Customer.AddAsync(customer);
                     return await db.SaveChangesAsync() >= 1;
                 }
