@@ -1,5 +1,5 @@
 ﻿using MarcaPonto.Enum;
-using MarcaPonto.Model.Usuários;
+using MarcaPonto.Model.Users;
 using MarcaPonto.Repository.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -28,12 +28,13 @@ namespace MarcaPonto_API.Controllers
 
         [HttpPost]
         [Route("create-customer")]
-        [Authorize(Roles = "Administrador")]
-        public void CreateUser(User customer)
+        //[Authorize(Roles = "Administrador")]
+        [AllowAnonymous]
+        public void CreateUser(UserCreateViewModel user)
         {
             try
             {
-                _userResitory.CreateUserAsync(customer, UsersEnum.Customer);
+                _userResitory.CreateUserAsync(user, UsersEnum.Customer);
             }
             catch (Exception ex)
             {
@@ -43,13 +44,13 @@ namespace MarcaPonto_API.Controllers
 
         [HttpPost]
         [Route("create-admin")]
-        //[Authorize(Roles = "Administrador")]
-        [AllowAnonymous]
-        public void CreateAdmin(User customer)
+        [Authorize(Roles = "Administrador")]
+        //[AllowAnonymous]
+        public void CreateAdmin(UserCreateViewModel user)
         {
             try
             {
-                _userResitory.CreateUserAsync(customer, UsersEnum.Administrador);
+                _userResitory.CreateUserAsync(user, UsersEnum.Administrador);
             }
             catch (Exception ex)
             {
@@ -60,7 +61,7 @@ namespace MarcaPonto_API.Controllers
         [HttpGet]
         [Route("get-all-customers")]
         [Authorize(Roles = "Customer,Administrador")]
-        public List<User> GetAllCustomers()
+        public List<Customer> GetAllCustomers()
         {
             try
             {
@@ -75,7 +76,7 @@ namespace MarcaPonto_API.Controllers
         [HttpGet]
         [Route("get-customer-by-id")]
         [Authorize(Roles = "Administrador")]
-        public User GetCustomerById (string customerId)
+        public Customer GetCustomerById (string customerId)
         {
             try
             {
@@ -90,7 +91,7 @@ namespace MarcaPonto_API.Controllers
         [HttpPut]
         [Route("update-customer")]
         [Authorize(Roles = "Customer,Administrador")]
-        public async Task<bool> UpdateUserAsync(User customer)
+        public async Task<bool> UpdateUserAsync(Customer customer)
         {
             try
             {

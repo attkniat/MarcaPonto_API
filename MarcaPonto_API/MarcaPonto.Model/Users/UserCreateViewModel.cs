@@ -2,11 +2,8 @@
 
 namespace MarcaPonto.Model.Users
 {
-    public class Customer
+    public class UserCreateViewModel
     {
-        [Key]
-        public string Id { get; set; }
-
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
@@ -18,9 +15,6 @@ namespace MarcaPonto.Model.Users
         [Required]
         [MaxLength(100)]
         public string Email { get; set; }
-
-        [Required]
-        public string Role { get; set; }
 
         [Required]
         [MinLength(8)]

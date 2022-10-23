@@ -5,6 +5,6 @@ namespace MarcaPonto.Auth.Interfaces
 {
     public interface IToken
     {
-        Task<string> GenerateToken(UserAuthModel customer);
+        Task<string> GenerateToken(UserAuthenticationModel customer);
     }
 }

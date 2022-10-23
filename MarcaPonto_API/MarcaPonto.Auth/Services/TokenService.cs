@@ -11,7 +11,7 @@ namespace MarcaPonto.Auth.Services
 {
     public class TokenService : IToken
     {
-        public async Task<string> GenerateToken(UserAuthModel user)
+        public async Task<string> GenerateToken(UserAuthenticationModel user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Settings.Secret);

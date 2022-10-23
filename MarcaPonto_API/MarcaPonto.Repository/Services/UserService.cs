@@ -1,6 +1,6 @@
 ﻿using MarcaPonto.DataBase;
 using MarcaPonto.Enum;
-using MarcaPonto.Model.Usuários;
+using MarcaPonto.Model.Users;
 using MarcaPonto.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,14 +11,21 @@ namespace MarcaPonto.Repository.Services
 {
     public class UserService : IUser
     {
-        public async Task<bool> CreateUserAsync(User customer, UsersEnum role)
+        public async Task<bool> CreateUserAsync(UserCreateViewModel customerCreate, UsersEnum role)
         {
             using (var db = new AppDBContext())
             {
                 try
                 {
-                    customer.Id = Guid.NewGuid().ToString();
-                    customer.Role = role.ToString();
+                    var customer = new Customer()
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Role = role.ToString(),
+                        CPF = customerCreate.CPF,
+                        Email = customerCreate.Email,
+                        Name = customerCreate.Name,
+                        Password = customerCreate.Password
+                    };
 
                     await db.Customer.AddAsync(customer);
                     return await db.SaveChangesAsync() >= 1;
@@ -30,7 +37,7 @@ namespace MarcaPonto.Repository.Services
             }
         }
 
-        public List<User> GetAllCustomers()
+        public List<Customer> GetAllCustomers()
         {
             using (var db = new AppDBContext())
             {
@@ -38,15 +45,15 @@ namespace MarcaPonto.Repository.Services
             }
         }
 
-        public User GetCustomerByEmailPassword(string customerEmail, string password)
+        public Customer GetCustomerByEmailPassword(string customerEmail, string password)
         {
             using (var db = new AppDBContext())
             {
-                return db.Customer.FirstOrDefault(c => c.Email == customerEmail  && c.Password == password);
+                return db.Customer.FirstOrDefault(c => c.Email == customerEmail && c.Password == password);
             }
         }
 
-        public User GetCustomerById(string customerIdGuild)
+        public Customer GetCustomerById(string customerIdGuild)
         {
             using (var db = new AppDBContext())
             {
@@ -54,7 +61,7 @@ namespace MarcaPonto.Repository.Services
             }
         }
 
-        public async Task<bool> UpdateUser(User customer)
+        public async Task<bool> UpdateUser(Customer customer)
         {
             using (var db = new AppDBContext())
             {

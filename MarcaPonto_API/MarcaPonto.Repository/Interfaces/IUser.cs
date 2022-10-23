@@ -1,5 +1,5 @@
 ﻿using MarcaPonto.Enum;
-using MarcaPonto.Model.Usuários;
+using MarcaPonto.Model.Users;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,11 +7,11 @@ namespace MarcaPonto.Repository.Interfaces
 {
     public  interface IUser
     {
-        Task<bool> CreateUserAsync(User customer, UsersEnum role);
-        User GetCustomerById(string customerIdGuild);
-        User GetCustomerByEmailPassword(string customerEmail, string password);
-        List<User> GetAllCustomers();
-        Task<bool> UpdateUser(User customer);
+        Task<bool> CreateUserAsync(UserCreateViewModel customer, UsersEnum role);
+        Customer GetCustomerById(string customerIdGuild);
+        Customer GetCustomerByEmailPassword(string customerEmail, string password);
+        List<Customer> GetAllCustomers();
+        Task<bool> UpdateUser(Customer customer);
         Task<bool> DeleteUser(string customerIdGuild);
     }
 }

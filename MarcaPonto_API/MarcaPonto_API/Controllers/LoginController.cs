@@ -22,14 +22,14 @@ namespace MarcaPonto_API.Controllers
 
         [HttpPost]
         [Route("login")]
-        public async Task<ActionResult<dynamic>> Authenticate([FromBody] UserViewModel customer)
+        public async Task<ActionResult<dynamic>> Authenticate([FromBody] UserLoginModel customer)
         {
             var userFromDb = _user.GetCustomerByEmailPassword(customer.Email, customer.Password);
 
             if (userFromDb == null)
                 return NotFound(new { message = "User not Found" });
 
-            var userAuth = new UserAuthModel()
+            var userAuth = new UserAuthenticationModel()
             {
                 Email = userFromDb.Email,
                 Password = userFromDb.Password,
@@ -49,14 +49,14 @@ namespace MarcaPonto_API.Controllers
 
         [HttpPost]
         [Route("admin-login")]
-        public async Task<ActionResult<dynamic>> AdminAuthenticate([FromBody] UserViewModel customer)
+        public async Task<ActionResult<dynamic>> AdminAuthenticate([FromBody] UserLoginModel customer)
         {
             var userFromDb = _user.GetCustomerByEmailPassword(customer.Email, customer.Password);
 
             if (userFromDb == null)
                 return NotFound(new { message = "User not Found" });
 
-            var userAuth = new UserAuthModel()
+            var userAuth = new UserAuthenticationModel()
             {
                 Email = userFromDb.Email,
                 Password = userFromDb.Password,
