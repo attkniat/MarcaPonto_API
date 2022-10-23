@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace MarcaPonto_API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class LoginController : ControllerBase
     {
         public readonly IToken _token;

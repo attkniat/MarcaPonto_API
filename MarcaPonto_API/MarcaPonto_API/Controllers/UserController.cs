@@ -1,5 +1,6 @@
 ﻿using MarcaPonto.Model.Usuários;
 using MarcaPonto.Repository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,20 @@ namespace MarcaPonto_API.Controllers
     {
         public readonly IUser _userResitory;
 
+
         public UserController(IUser userResitory)
         {
             _userResitory = userResitory;
         }
 
+        [HttpGet]
+        [Route("welcome")]
+        [AllowAnonymous]
+        public string Welcome() => "Welcome to MarcaPonto API!";
+
         [HttpPost]
         [Route("create-customer")]
+        [Authorize(Roles = "Customer,Administrador")]
         public void CreateUser(User customer)
         {
             try
@@ -34,6 +42,7 @@ namespace MarcaPonto_API.Controllers
 
         [HttpGet]
         [Route("get-all-customers")]
+        [Authorize(Roles = "Customer,Administrador")]
         public List<User> GetAllCustomers()
         {
             try
@@ -48,6 +57,7 @@ namespace MarcaPonto_API.Controllers
 
         [HttpGet]
         [Route("get-customer-by-id")]
+        [Authorize(Roles = "Administrador")]
         public User GetCustomerById (string customerId)
         {
             try
@@ -62,6 +72,7 @@ namespace MarcaPonto_API.Controllers
 
         [HttpPut]
         [Route("update-customer")]
+        [Authorize(Roles = "Customer,Administrador")]
         public async Task<bool> UpdateUserAsync(User customer)
         {
             try
@@ -76,6 +87,7 @@ namespace MarcaPonto_API.Controllers
 
         [HttpDelete]
         [Route("delete-customer")]
+        [Authorize(Roles = "Administrador")]
         public async Task<bool> DeleteUser(string customerId)
         {
             try

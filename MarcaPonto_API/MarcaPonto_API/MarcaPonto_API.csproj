@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MarcaPonto.Auth\MarcaPonto.Auth.csproj" />
+    <ProjectReference Include="..\MarcaPonto.Enum\MarcaPonto.Enum.csproj" />
     <ProjectReference Include="..\MarcaPonto.Model\MarcaPonto.Model.csproj" />
     <ProjectReference Include="..\MarcaPonto.Repository\MarcaPonto.Repository.csproj" />
   </ItemGroup>
