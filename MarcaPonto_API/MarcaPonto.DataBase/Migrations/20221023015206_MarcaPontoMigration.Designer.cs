@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MarcaPonto.DataBase.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20221023013652_MarcaPontoMigration")]
+    [Migration("20221023015206_MarcaPontoMigration")]
     partial class MarcaPontoMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,7 +52,7 @@ namespace MarcaPonto.DataBase.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "88b49a5f-048b-4af7-9ae4-578aceccc19d",
+                            Id = "48ef6c7b-a4a1-4045-ab27-ab1b287cbf59",
                             CPF = "1234567890",
                             Email = "Customer1@email.com",
                             Name = "Customer 01",
@@ -61,7 +61,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "81821e02-f617-4bce-a8ff-5e85997c1cf1",
+                            Id = "89a7696a-a44d-4be9-811e-ddeae5fedfb6",
                             CPF = "2234567890",
                             Email = "Customer2@email.com",
                             Name = "Customer 02",
@@ -70,29 +70,11 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "58f534bf-f7a7-431f-afea-a045a76bae75",
+                            Id = "c1aa9821-fb4f-4117-ad9c-7b8997901f15",
                             CPF = "3234567890",
                             Email = "Customer3@email.com",
                             Name = "Customer 03",
                             Password = "customer03",
-                            Role = "Customer"
-                        },
-                        new
-                        {
-                            Id = "c5785ed0-cf69-4c68-a6f5-ea97e86ca6a7",
-                            CPF = "4234567890",
-                            Email = "Customer4@email.com",
-                            Name = "Customer 04",
-                            Password = "customer04",
-                            Role = "Customer"
-                        },
-                        new
-                        {
-                            Id = "87c83265-4d01-43de-8d42-d536145b8dbe",
-                            CPF = "5234567890",
-                            Email = "Customer5@email.com",
-                            Name = "Customer 05",
-                            Password = "customer05",
                             Role = "Customer"
                         });
                 });

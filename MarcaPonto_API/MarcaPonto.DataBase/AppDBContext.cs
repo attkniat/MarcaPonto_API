@@ -18,13 +18,14 @@ namespace MarcaPonto.DataBase
             var fullPath = Path.GetFullPath(Path.Combine(dirPath, "Db/AppDB.db"));
 
             dbContextOptionsBuilder.UseSqlite($"Data Source={fullPath}");
+            //dbContextOptionsBuilder.UseSqlite("Data Source=./Db/AppDB.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var customers = new Customer[5];
+            var customers = new Customer[3];
 
-            for (int i = 1; i <= 5; i++)
+            for (int i = 1; i <= 3; i++)
             {
                 customers[i - 1] = new Customer
                 {

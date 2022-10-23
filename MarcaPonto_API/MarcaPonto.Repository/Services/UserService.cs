@@ -1,4 +1,5 @@
 ﻿using MarcaPonto.DataBase;
+using MarcaPonto.Enum;
 using MarcaPonto.Model.Usuários;
 using MarcaPonto.Repository.Interfaces;
 using System;
@@ -17,6 +18,8 @@ namespace MarcaPonto.Repository.Services
                 try
                 {
                     customer.Id = Guid.NewGuid().ToString();
+                    customer.Role = nameof(UsersEnum.Customer).ToString();
+
                     await db.Customer.AddAsync(customer);
                     return await db.SaveChangesAsync() >= 1;
                 }
