@@ -3,19 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto_API", "MarcaPonto_API\MarcaPonto_API.csproj", "{2ED2D900-3D7C-4B48-B2A0-AE0D05F35716}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto_API", "MarcaPonto_API\MarcaPonto_API.csproj", "{2ED2D900-3D7C-4B48-B2A0-AE0D05F35716}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.Model", "MarcaPonto.Model\MarcaPonto.Model.csproj", "{A816AE90-3FF0-45DD-8079-59D781B0D444}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto.Model", "MarcaPonto.Model\MarcaPonto.Model.csproj", "{A816AE90-3FF0-45DD-8079-59D781B0D444}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.Repository", "MarcaPonto.Repository\MarcaPonto.Repository.csproj", "{63050D12-34CB-4187-AB0A-9E8CCA7F0160}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto.Repository", "MarcaPonto.Repository\MarcaPonto.Repository.csproj", "{63050D12-34CB-4187-AB0A-9E8CCA7F0160}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.DataBase", "MarcaPonto.DataBase\MarcaPonto.DataBase.csproj", "{9B01157C-265C-4C05-9CF1-8CFD193814D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto.DataBase", "MarcaPonto.DataBase\MarcaPonto.DataBase.csproj", "{9B01157C-265C-4C05-9CF1-8CFD193814D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.Enum", "MarcaPonto.Enum\MarcaPonto.Enum.csproj", "{5BF136C9-6663-49BA-A1A2-184ED70C523E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto.Enum", "MarcaPonto.Enum\MarcaPonto.Enum.csproj", "{5BF136C9-6663-49BA-A1A2-184ED70C523E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.BI", "MarcaPonto.BI\MarcaPonto.BI.csproj", "{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto.BI", "MarcaPonto.BI\MarcaPonto.BI.csproj", "{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.Auth", "MarcaPonto.Auth\MarcaPonto.Auth.csproj", "{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto.Auth", "MarcaPonto.Auth\MarcaPonto.Auth.csproj", "{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6458FADE-D613-4256-8873-994244FDA220}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

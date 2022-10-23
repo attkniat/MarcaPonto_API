@@ -5,10 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.17" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MarcaPonto.Auth\MarcaPonto.Auth.csproj" />
     <ProjectReference Include="..\MarcaPonto.Model\MarcaPonto.Model.csproj" />
     <ProjectReference Include="..\MarcaPonto.Repository\MarcaPonto.Repository.csproj" />
   </ItemGroup>

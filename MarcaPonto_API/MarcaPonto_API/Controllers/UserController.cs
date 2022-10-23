@@ -62,11 +62,11 @@ namespace MarcaPonto_API.Controllers
 
         [HttpGet]
         [Route("get-customer-by-cpf")]
-        public Customer GetCustomerByCPF(string customerCPF)
+        public Customer GetCustomerByCPF(string customerEmail, string customerPassword)
         {
             try
             {
-                return _userResitory.GetCustomerByEmailPassword(customerCPF);
+                return _userResitory.GetCustomerByEmailPassword(customerEmail, customerPassword);
             }
             catch (Exception ex)
             {
