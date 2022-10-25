@@ -19,10 +19,11 @@ namespace MarcaPonto.Auth.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
-               {
-                   new Claim(ClaimTypes.Email, user.Email),
-                   new Claim(ClaimTypes.Role, user.Role),
-               }),
+                {
+                    new Claim("userId", user.UserId),
+                    new Claim(ClaimTypes.Email, user.Email),
+                    new Claim(ClaimTypes.Role, user.Role),
+                }),
 
                 Expires = DateTime.UtcNow.AddHours(8),
 

@@ -93,11 +93,11 @@ namespace MarcaPonto_API
 
             services.AddTransient<IToken, TokenService>();
             services.AddTransient<IUser, UserService>();
+            services.AddTransient<IPonto, PontoService>();
 
             #endregion
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();

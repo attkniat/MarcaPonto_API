@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MarcaPonto.DataBase.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20221023015206_MarcaPontoMigration")]
+    [Migration("20221024220846_MarcaPontoMigration")]
     partial class MarcaPontoMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,7 +17,42 @@ namespace MarcaPonto.DataBase.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.17");
 
-            modelBuilder.Entity("MarcaPonto.Model.Usuários.Customer", b =>
+            modelBuilder.Entity("MarcaPonto.Model.Ponto.Ponto", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("DataCadastro")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ponto");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "67cdcc76-b4df-4267-949b-c839b6dd4db6",
+                            Active = true,
+                            DataCadastro = "24/10/2022 22:08:45",
+                            UserId = "305bb669-59ec-4b6c-b718-2a2c3a71bdc3",
+                            UserName = "Customer 01"
+                        });
+                });
+
+            modelBuilder.Entity("MarcaPonto.Model.Users.Customer", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
@@ -52,7 +87,7 @@ namespace MarcaPonto.DataBase.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "48ef6c7b-a4a1-4045-ab27-ab1b287cbf59",
+                            Id = "305bb669-59ec-4b6c-b718-2a2c3a71bdc3",
                             CPF = "1234567890",
                             Email = "Customer1@email.com",
                             Name = "Customer 01",
@@ -61,7 +96,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "89a7696a-a44d-4be9-811e-ddeae5fedfb6",
+                            Id = "0ea7327d-1e33-4a11-ae68-235cb4ed1690",
                             CPF = "2234567890",
                             Email = "Customer2@email.com",
                             Name = "Customer 02",
@@ -70,7 +105,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "c1aa9821-fb4f-4117-ad9c-7b8997901f15",
+                            Id = "6a6f7207-b85e-4fb1-a356-cf36e6eb3095",
                             CPF = "3234567890",
                             Email = "Customer3@email.com",
                             Name = "Customer 03",

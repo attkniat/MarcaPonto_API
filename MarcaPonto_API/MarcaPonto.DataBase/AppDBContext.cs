@@ -1,4 +1,5 @@
 ﻿using MarcaPonto.Model.Users;
+using MarcaPonto.Model.Ponto;
 using Microsoft.EntityFrameworkCore;
 using System;
 using MarcaPonto.Enum;
@@ -10,6 +11,7 @@ namespace MarcaPonto.DataBase
     public class AppDBContext : DbContext
     {
         public DbSet<Customer> Customer { get; set; }
+        public DbSet<Ponto> Ponto { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
@@ -17,7 +19,10 @@ namespace MarcaPonto.DataBase
             dirPath = Path.GetDirectoryName(dirPath);
             var fullPath = Path.GetFullPath(Path.Combine(dirPath, "Db/AppDB.db"));
 
+            //Usar este para teste local
             dbContextOptionsBuilder.UseSqlite($"Data Source={fullPath}");
+
+            //Usar este para rodar Migrations
             //dbContextOptionsBuilder.UseSqlite("Data Source=./Db/AppDB.db");
         }
 
@@ -37,7 +42,18 @@ namespace MarcaPonto.DataBase
                     Role = nameof(UsersEnum.Customer).ToString()
                 };
             }
+
+            var ponto = new Ponto()
+            {
+                Id = Guid.NewGuid().ToString(),
+                UserId = customers[0].Id,
+                DataCadastro = DateTime.UtcNow.ToString(),
+                UserName = customers[0].Name,
+                Active = true
+            };
+
             modelBuilder.Entity<Customer>().HasData(customers);
+            modelBuilder.Entity<Ponto>().HasData(ponto);
         }
     }
 }

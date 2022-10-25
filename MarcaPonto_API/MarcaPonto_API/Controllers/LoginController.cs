@@ -33,6 +33,7 @@ namespace MarcaPonto_API.Controllers
             {
                 Email = userFromDb.Email,
                 Password = userFromDb.Password,
+                UserId = userFromDb.Id,
                 Role = nameof(UsersEnum.Customer)
             };
 
