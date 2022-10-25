@@ -4,7 +4,6 @@ using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using MarcaPonto.Repository.Services;
 using MarcaPonto.Repository.Interfaces;
 
 namespace MarcaPonto_API.Controllers
