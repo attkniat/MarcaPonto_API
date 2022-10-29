@@ -30,9 +30,12 @@ namespace MarcaPonto.Repository.Services
             }
         }
 
-        public Task<List<Ponto>> GetAllPontosAsync()
+        public async Task<List<Ponto>> GetAllPontosAsync(string userId)
         {
-            throw new NotImplementedException();
+            using (var db = new AppDBContext())
+            {
+                return db.Ponto.Where(x => x.UserId == userId).ToList();
+            }
         }
 
         public Task<Ponto> GetPontoByDateAsync(string userId)

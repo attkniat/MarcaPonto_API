@@ -5,6 +5,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using MarcaPonto.Repository.Interfaces;
+using System.Collections.Generic;
+using MarcaPonto.Model.Ponto;
 
 namespace MarcaPonto_API.Controllers
 {
@@ -31,6 +33,25 @@ namespace MarcaPonto_API.Controllers
             catch (Exception ex)
             {
                 throw new Exception($"Was not possible to procede in {nameof(MarcarPontoAsync)} ---> {ex.Message}");
+            }
+        }
+
+        [HttpPost]
+        [Route("get-all-pontos-by-userId-async")]
+        [Authorize(Roles = "Customer,Administrador")]
+        public async Task<List<Ponto>> GetAllPontosByUserIdEntityAsync()
+        {
+            try
+            {
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                var userId = identity.Claims.First(c => c.Type == "userId").Value;
+
+                return await _ponto.GetAllPontosAsync(userId);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Was not possible to procede in {nameof(GetAllPontosByUserIdEntityAsync)} ---> {ex.Message}");
             }
         }
     }
