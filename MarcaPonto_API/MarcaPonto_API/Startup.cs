@@ -28,6 +28,22 @@ namespace MarcaPonto_API
         {
             services.AddControllers();
 
+            #region CORS
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CORSPolicy",
+                    builder =>
+                    {
+                        builder
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .WithOrigins("https://localhost:44328", "http://127.0.0.1:5173");
+                    });
+            });
+
+            #endregion
+
             #region Swagger
 
             services.AddSwaggerGen(c =>
@@ -104,6 +120,7 @@ namespace MarcaPonto_API
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MarcaPonto_API v1"));
 
+            app.UseCors("CORSPolicy");
             app.UseHttpsRedirection();
 
             app.UseRouting();
