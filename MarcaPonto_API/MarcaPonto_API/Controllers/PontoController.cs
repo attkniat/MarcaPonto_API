@@ -36,7 +36,7 @@ namespace MarcaPonto_API.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("get-all-pontos-by-userId-async")]
         [Authorize(Roles = "Customer,Administrador")]
         public async Task<List<Ponto>> GetAllPontosByUserIdEntityAsync()

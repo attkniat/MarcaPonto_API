@@ -53,6 +53,23 @@ namespace MarcaPonto.Repository.Services
             }
         }
 
+        public CustomerViewModel GetCustomer(string customerIdGuild)
+        {
+            using (var db = new AppDBContext())
+            {
+                var customer = db.Customer.FirstOrDefault(c => c.Id == customerIdGuild);
+
+                return new CustomerViewModel
+                {
+                    Id = customer.Id,
+                    Name = customer.Name,
+                    CPF = customer.CPF,
+                    Email = customer.Email,
+                    Role = customer.Role
+                };
+            }
+        }
+
         public Customer GetCustomerById(string customerIdGuild)
         {
             using (var db = new AppDBContext())

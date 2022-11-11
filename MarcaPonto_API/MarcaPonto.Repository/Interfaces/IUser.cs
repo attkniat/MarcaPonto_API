@@ -8,6 +8,7 @@ namespace MarcaPonto.Repository.Interfaces
     public  interface IUser
     {
         Task<bool> CreateUserAsync(UserCreateViewModel customer, UsersEnum role);
+        CustomerViewModel GetCustomer(string customerId);
         Customer GetCustomerById(string customerIdGuild);
         Customer GetCustomerByEmailPassword(string customerEmail, string password);
         List<Customer> GetAllCustomers();

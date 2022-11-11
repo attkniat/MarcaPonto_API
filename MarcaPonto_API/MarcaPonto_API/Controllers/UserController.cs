@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace MarcaPonto_API.Controllers
@@ -68,6 +70,24 @@ namespace MarcaPonto_API.Controllers
             catch (Exception ex)
             {
                 throw new Exception($"Was not possible to Get all the Customers ---> {ex.Message}");
+            }
+        }
+
+        [HttpGet]
+        [Route("get-customer")]
+        [Authorize(Roles = "Customer,Administrador")]
+        public CustomerViewModel GetCustomer()
+        {
+            try
+            {
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                var customerId = identity.Claims.First(c => c.Type == "userId").Value;
+
+                return _userResitory.GetCustomer(customerId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Was not possible to Get the Customer ---> {ex.Message}");
             }
         }
 
