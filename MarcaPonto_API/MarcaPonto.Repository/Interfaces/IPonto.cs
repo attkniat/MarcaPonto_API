@@ -10,5 +10,6 @@ namespace MarcaPonto.Repository.Interfaces
         Task<List<Ponto>> GetAllPontosAsync(string userId);
         Task<Ponto> GetPontoByUserIdAsync(string userId);
         Task<Ponto> GetPontoByDateAsync(string userId);
+        Task<bool> DeleteAllPontosByUserId(string userId);
     }
 }

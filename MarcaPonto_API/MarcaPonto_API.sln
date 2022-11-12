@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.Utils", "MarcaPonto.Utils\MarcaPonto.Utils.csproj", "{CF395125-1863-4FD0-88F4-D1E30AB652AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF395125-1863-4FD0-88F4-D1E30AB652AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF395125-1863-4FD0-88F4-D1E30AB652AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF395125-1863-4FD0-88F4-D1E30AB652AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF395125-1863-4FD0-88F4-D1E30AB652AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

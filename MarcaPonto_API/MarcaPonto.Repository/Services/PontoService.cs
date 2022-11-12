@@ -19,7 +19,7 @@ namespace MarcaPonto.Repository.Services
                 var ponto = new Ponto
                 {
                     Id = Guid.NewGuid().ToString(),
-                    DataCadastro = DateTime.UtcNow.ToString(),
+                    DataCadastro = Utils.Utils.DateTimeBr().ToString(),
                     UserId = userId,
                     UserName = user.Name,
                     Active = true
@@ -37,6 +37,18 @@ namespace MarcaPonto.Repository.Services
                 return db.Ponto.Where(x => x.UserId == userId).ToList();
             }
         }
+        public async Task<bool> DeleteAllPontosByUserId(string userId)
+        {
+            using (var db = new AppDBContext())
+            {
+                foreach (var item in db.Ponto.Where(x => x.UserId == userId))
+                {
+                    db.Ponto.Remove(item);
+                }
+
+                return await db.SaveChangesAsync() >= 1;
+            }
+        }
 
         public Task<Ponto> GetPontoByDateAsync(string userId)
         {
@@ -47,5 +59,6 @@ namespace MarcaPonto.Repository.Services
         {
             throw new NotImplementedException();
         }
+
     }
 }

@@ -47,7 +47,7 @@ namespace MarcaPonto.DataBase
             {
                 Id = Guid.NewGuid().ToString(),
                 UserId = customers[0].Id,
-                DataCadastro = DateTime.UtcNow.ToString(),
+                DataCadastro = Utils.Utils.DateTimeBr().ToString(),
                 UserName = customers[0].Name,
                 Active = true
             };

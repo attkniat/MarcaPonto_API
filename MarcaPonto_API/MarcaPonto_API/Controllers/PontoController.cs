@@ -54,5 +54,16 @@ namespace MarcaPonto_API.Controllers
                 throw new Exception($"Was not possible to procede in {nameof(GetAllPontosByUserIdEntityAsync)} ---> {ex.Message}");
             }
         }
+
+        [HttpDelete]
+        [Route("delete-all-pontos-by-userId-async")]
+        [Authorize(Roles = "Customer,Administrador")]
+        public async Task<bool> DeleteAllPontosByUserId()
+        {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            var userId = identity.Claims.First(c => c.Type == "userId").Value;
+
+            return await _ponto.DeleteAllPontosByUserId(userId);
+        }
     }
 }
