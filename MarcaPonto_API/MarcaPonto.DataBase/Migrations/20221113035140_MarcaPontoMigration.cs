@@ -40,22 +40,17 @@ namespace MarcaPonto.DataBase.Migrations
             migrationBuilder.InsertData(
                 table: "Customer",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "305bb669-59ec-4b6c-b718-2a2c3a71bdc3", "1234567890", "Customer1@email.com", "Customer 01", "customer01", "Customer" });
+                values: new object[] { "aa3ed8e7-2abf-489e-9505-710e914ce158", "1234567890", "Customer1@email.com", "Customer 01", "customer01", "Customer" });
 
             migrationBuilder.InsertData(
                 table: "Customer",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "0ea7327d-1e33-4a11-ae68-235cb4ed1690", "2234567890", "Customer2@email.com", "Customer 02", "customer02", "Customer" });
+                values: new object[] { "8d0f8934-c985-4837-9bf6-4b9d54bc021f", "2234567890", "Customer2@email.com", "Customer 02", "customer02", "Customer" });
 
             migrationBuilder.InsertData(
                 table: "Customer",
                 columns: new[] { "Id", "CPF", "Email", "Name", "Password", "Role" },
-                values: new object[] { "6a6f7207-b85e-4fb1-a356-cf36e6eb3095", "3234567890", "Customer3@email.com", "Customer 03", "customer03", "Customer" });
-
-            migrationBuilder.InsertData(
-                table: "Ponto",
-                columns: new[] { "Id", "Active", "DataCadastro", "UserId", "UserName" },
-                values: new object[] { "67cdcc76-b4df-4267-949b-c839b6dd4db6", true, "24/10/2022 22:08:45", "305bb669-59ec-4b6c-b718-2a2c3a71bdc3", "Customer 01" });
+                values: new object[] { "f1428e85-4162-4732-9711-b2b6792ce9a2", "3234567890", "Customer3@email.com", "Customer 03", "customer03", "Customer" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

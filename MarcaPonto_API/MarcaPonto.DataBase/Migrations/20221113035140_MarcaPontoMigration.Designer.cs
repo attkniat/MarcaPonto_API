@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MarcaPonto.DataBase.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20221024220846_MarcaPontoMigration")]
+    [Migration("20221113035140_MarcaPontoMigration")]
     partial class MarcaPontoMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,16 +40,6 @@ namespace MarcaPonto.DataBase.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Ponto");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "67cdcc76-b4df-4267-949b-c839b6dd4db6",
-                            Active = true,
-                            DataCadastro = "24/10/2022 22:08:45",
-                            UserId = "305bb669-59ec-4b6c-b718-2a2c3a71bdc3",
-                            UserName = "Customer 01"
-                        });
                 });
 
             modelBuilder.Entity("MarcaPonto.Model.Users.Customer", b =>
@@ -87,7 +77,7 @@ namespace MarcaPonto.DataBase.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "305bb669-59ec-4b6c-b718-2a2c3a71bdc3",
+                            Id = "aa3ed8e7-2abf-489e-9505-710e914ce158",
                             CPF = "1234567890",
                             Email = "Customer1@email.com",
                             Name = "Customer 01",
@@ -96,7 +86,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "0ea7327d-1e33-4a11-ae68-235cb4ed1690",
+                            Id = "8d0f8934-c985-4837-9bf6-4b9d54bc021f",
                             CPF = "2234567890",
                             Email = "Customer2@email.com",
                             Name = "Customer 02",
@@ -105,7 +95,7 @@ namespace MarcaPonto.DataBase.Migrations
                         },
                         new
                         {
-                            Id = "6a6f7207-b85e-4fb1-a356-cf36e6eb3095",
+                            Id = "f1428e85-4162-4732-9711-b2b6792ce9a2",
                             CPF = "3234567890",
                             Email = "Customer3@email.com",
                             Name = "Customer 03",

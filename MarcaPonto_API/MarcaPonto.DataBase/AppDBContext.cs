@@ -19,10 +19,10 @@ namespace MarcaPonto.DataBase
             dirPath = Path.GetDirectoryName(dirPath);
             var fullPath = Path.GetFullPath(Path.Combine(dirPath, "Db/AppDB.db"));
 
-            //Usar este para teste local
+            //Usar este para rodar Migrations
             dbContextOptionsBuilder.UseSqlite($"Data Source={fullPath}");
 
-            //Usar este para rodar Migrations
+            //Usar este para teste local
             //dbContextOptionsBuilder.UseSqlite("Data Source=./Db/AppDB.db");
         }
 
@@ -42,18 +42,7 @@ namespace MarcaPonto.DataBase
                     Role = nameof(UsersEnum.Customer).ToString()
                 };
             }
-
-            var ponto = new Ponto()
-            {
-                Id = Guid.NewGuid().ToString(),
-                UserId = customers[0].Id,
-                DataCadastro = Utils.Utils.DateTimeBr().ToString(),
-                UserName = customers[0].Name,
-                Active = true
-            };
-
             modelBuilder.Entity<Customer>().HasData(customers);
-            modelBuilder.Entity<Ponto>().HasData(ponto);
         }
     }
 }
