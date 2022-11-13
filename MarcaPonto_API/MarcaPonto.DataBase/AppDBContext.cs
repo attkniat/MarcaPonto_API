@@ -22,7 +22,7 @@ namespace MarcaPonto.DataBase
             //Usar este para rodar Migrations
             dbContextOptionsBuilder.UseSqlite($"Data Source={fullPath}");
 
-            //Usar este para teste local
+            //Lembro de usar desta forma, não lembro o porquê
             //dbContextOptionsBuilder.UseSqlite("Data Source=./Db/AppDB.db");
         }
 
