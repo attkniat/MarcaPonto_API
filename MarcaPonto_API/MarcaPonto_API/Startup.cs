@@ -38,7 +38,7 @@ namespace MarcaPonto_API
                         builder
                         .AllowAnyMethod()
                         .AllowAnyHeader()
-                        .WithOrigins("https://localhost:44328", "http://127.0.0.1:5173");
+                        .WithOrigins("https://localhost:44328", "http://localhost:8000");
                     });
             });
 
