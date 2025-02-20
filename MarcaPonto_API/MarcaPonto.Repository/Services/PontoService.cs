@@ -1,6 +1,7 @@
 ﻿using MarcaPonto.DataBase;
 using MarcaPonto.Model.Ponto;
 using MarcaPonto.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace MarcaPonto.Repository.Services
         {
             using (var db = new AppDBContext())
             {
-                return db.Ponto.Where(x => x.UserId == userId).ToList();
+                return await db.Ponto.Where(x => x.UserId == userId).ToListAsync();
             }
         }
         public async Task<bool> DeleteAllPontosByUserId(string userId)
