@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto.DataBase", "Marc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto.Enum", "MarcaPonto.Enum\MarcaPonto.Enum.csproj", "{5BF136C9-6663-49BA-A1A2-184ED70C523E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto.BI", "MarcaPonto.BI\MarcaPonto.BI.csproj", "{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto.Auth", "MarcaPonto.Auth\MarcaPonto.Auth.csproj", "{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6458FADE-D613-4256-8873-994244FDA220}"
@@ -22,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcaPonto.Utils", "MarcaPonto.Utils\MarcaPonto.Utils.csproj", "{CF395125-1863-4FD0-88F4-D1E30AB652AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcaPonto.Utils", "MarcaPonto.Utils\MarcaPonto.Utils.csproj", "{CF395125-1863-4FD0-88F4-D1E30AB652AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,10 +48,6 @@ Global
 		{5BF136C9-6663-49BA-A1A2-184ED70C523E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BF136C9-6663-49BA-A1A2-184ED70C523E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BF136C9-6663-49BA-A1A2-184ED70C523E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50E07A5F-6F35-42BE-B7C1-1F3CB30868B8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE78FC3C-2E4B-44DC-B5F6-ACFEEE18A090}.Release|Any CPU.ActiveCfg = Release|Any CPU
