@@ -51,15 +51,14 @@ namespace MarcaPonto.Repository.Services
             }
         }
 
-        public Task<Ponto> GetPontoByDateAsync(string userId)
-        {
-            throw new NotImplementedException();
-        }
+        //public Task<Ponto> GetPontoByDateAsync(string userId)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task<Ponto> GetPontoByUserIdAsync(string userId)
-        {
-            throw new NotImplementedException();
-        }
-
+        //public Task<Ponto> GetPontoByUserIdAsync(string userId)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

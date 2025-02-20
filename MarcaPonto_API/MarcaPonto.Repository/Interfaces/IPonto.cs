@@ -8,8 +8,8 @@ namespace MarcaPonto.Repository.Interfaces
     {
         Task<bool> MarcarPontoAsync(string userId);
         Task<List<Ponto>> GetAllPontosAsync(string userId);
-        Task<Ponto> GetPontoByUserIdAsync(string userId);
-        Task<Ponto> GetPontoByDateAsync(string userId);
         Task<bool> DeleteAllPontosByUserId(string userId);
+        //Task<Ponto> GetPontoByUserIdAsync(string userId);
+        //Task<Ponto> GetPontoByDateAsync(string userId);
     }
 }
